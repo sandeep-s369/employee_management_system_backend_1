@@ -36,6 +36,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 				.orElseThrow(() -> new ResourceNotFoundException("Employee is not exist with given id :" + employeeId));
 		return EmployeeMapper.mapToEmployeeDto(employee);
 	}
+    
+	/*
+	public List<EmployeeDto> getEmployeeByFirstName(String employeeFirstName)
+ 	{
+		List<Employee> employees = employeeRepository.findEmployeesByFirstName(employeeFirstName)
+  						.orElseThrow(() -> new ResourceNotFoundException("Employees are not exist with given FirstName :" + employeeFirstName));
+		return employees.stream().map((employee) -> EmployeeMapper.mapToEmployeeDto(employee))
+				.collect(Collectors.toList());
+   	}
+	*/
 
 	@Override
 	public List<EmployeeDto> getAllEmployees() {
